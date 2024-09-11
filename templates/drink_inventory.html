@@ -59,41 +59,41 @@
         <label for="coke_zero_quantity">Coke Zero Quantity:</label>
         <input type="number" id="coke_zero_quantity" name="coke_zero_quantity" min="0" required><br><br>
 
-        <label for="lacroy_lemoncello_quantity">LaCroix Lemoncello Quantity:</label>
-        <input type="number" id="lacroy_lemoncello_quantity" name="lacroy_lemoncello_quantity" min="0" required><br><br>
+        <label for="lacroix_lemoncello_quantity">LaCroix Lemoncello Quantity:</label>
+        <input type="number" id="lacroix_lemoncello_quantity" name="lacroix_lemoncello_quantity" min="0" required><br><br>
 
-        <label for="lacroy_lime_quantity">LaCroix Lime Quantity:</label>
-        <input type="number" id="lacroy_lime_quantity" name="lacroy_lime_quantity" min="0" required><br><br>
+        <label for="lacroix_lime_quantity">LaCroix Lime Quantity:</label>
+        <input type="number" id="lacroix_lime_quantity" name="lacroix_lime_quantity" min="0" required><br><br>
 
-        <label for="lacroy_pamplemousse_quantity">LaCroix Pamplemousse/Grapefruit Quantity:</label>
-        <input type="number" id="lacroy_pamplemousse_quantity" name="lacroy_pamplemousse_quantity" min="0" required><br><br>
+        <label for="lacroix_pamplemousse_quantity">LaCroix Pamplemousse/Grapefruit Quantity:</label>
+        <input type="number" id="lacroix_pamplemousse_quantity" name="lacroix_pamplemousse_quantity" min="0" required><br><br>
 
-        <label for="lacroy_pasteque_quantity">LaCroix Pasteque/Watermelon Quantity:</label>
-        <input type="number" id="lacroy_pasteque_quantity" name="lacroy_pasteque_quantity" min="0" required><br><br>
+        <label for="lacroix_pasteque_quantity">LaCroix Pasteque/Watermelon Quantity:</label>
+        <input type="number" id="lacroix_pasteque_quantity" name="lacroix_pasteque_quantity" min="0" required><br><br>
 
         <label for="horizon_milk_quantity">Horizon Organic Milk Quantity:</label>
         <input type="number" id="horizon_milk_quantity" name="horizon_milk_quantity" min="0" required><br><br>
 
-        <label for="tangerine_quantity">Tangerine Quantity:</label>
+        <label for="tangerine_quantity">Lacroix Tangerine Quantity:</label>
         <input type="number" id="tangerine_quantity" name="tangerine_quantity" min="0" required><br><br>
 
-        <label for="lacroy_berry_quantity">LaCroix Berry Quantity:</label>
-        <input type="number" id="lacroy_berry_quantity" name="lacroy_berry_quantity" min="0" required><br><br>
+        <label for="lacroix_berry_quantity">LaCroix Berry Quantity:</label>
+        <input type="number" id="lacroix_berry_quantity" name="lacroix_berry_quantity" min="0" required><br><br>
 
-        <label for="lemon_quantity">Lemon Quantity:</label>
+        <label for="lemon_quantity">Lacroix Lemon Quantity:</label>
         <input type="number" id="lemon_quantity" name="lemon_quantity" min="0" required><br><br>
 
-        <label for="lacroy_blackberry_cucumber_quantity">LaCroix Blackberry Cucumber Quantity:</label>
-        <input type="number" id="lacroy_blackberry_cucumber_quantity" name="lacroy_blackberry_cucumber_quantity" min="0" required><br><br>
+        <label for="lacroix_blackberry_cucumber_quantity">LaCroix Blackberry Cucumber Quantity:</label>
+        <input type="number" id="lacroix_blackberry_cucumber_quantity" name="lacroix_blackberry_cucumber_quantity" min="0" required><br><br>
 
-        <label for="lacroy_cherry_lime_quantity">LaCroix Cherry Lime Quantity:</label>
-        <input type="number" id="lacroy_cherry_lime_quantity" name="lacroy_cherry_lime_quantity" min="0" required><br><br>
+        <label for="lacroix_cherry_lime_quantity">LaCroix Cherry Lime Quantity:</label>
+        <input type="number" id="lacroix_cherry_lime_quantity" name="lacroix_cherry_lime_quantity" min="0" required><br><br>
 
-        <label for="lacroy_pineapple_strawberry_quantity">LaCroix Pineapple Strawberry Quantity:</label>
-        <input type="number" id="lacroy_pineapple_strawberry_quantity" name="lacroy_pineapple_strawberry_quantity" min="0" required><br><br>
+        <label for="lacroix_pineapple_strawberry_quantity">LaCroix Pineapple Strawberry Quantity:</label>
+        <input type="number" id="lacroix_pineapple_strawberry_quantity" name="lacroix_pineapple_strawberry_quantity" min="0" required><br><br>
 
-        <label for="lacroy_ki_biscus_quantity">LaCroix Ki-Biscus Quantity:</label>
-        <input type="number" id="lacroy_ki_biscus_quantity" name="lacroy_ki_biscus_quantity" min="0" required><br><br>
+        <label for="lacroix_ki_biscus_quantity">LaCroix Ki-Biscus Quantity:</label>
+        <input type="number" id="lacroix_ki_biscus_quantity" name="lacroix_ki_biscus_quantity" min="0" required><br><br>
 
         <input type="submit" value="Add Items">
     </form>
@@ -103,7 +103,7 @@
         {% for item in items %}
         <li class="inventory-item">
             <div class="item-info">
-                Date: {{ item.date }} | Coke: {{ item.coke }} | Diet Coke: {{ item.diet_coke }} | Sprite: {{ item.sprite }} | Coke Zero: {{ item.coke_zero }} | LaCroix Lemoncello: {{ item.lacroix_lemoncello }} | LaCroix Lime: {{ item.lacroy_lime }} | LaCroix Pamplemousse: {{ item.lacroy_pamplemousse }} | LaCroix Pasteque: {{ item.lacroy_pasteque }} | Horizon Milk: {{ item.horizon_milk }} | Tangerine: {{ item.tangerine }} | LaCroix Berry: {{ item.lacroy_berry }} | Lemon: {{ item.lemon }} | LaCroix Blackberry Cucumber: {{ item.lacroy_blackberry_cucumber }} | LaCroix Cherry Lime: {{ item.lacroy_cherry_lime }} | LaCroix Pineapple Strawberry: {{ item.lacroy_pineapple_strawberry }} | LaCroix Ki-Biscus: {{ item.lacroy_ki_biscus }}
+                Date: {{ item.date }} | Coke: {{ item.coke }} | Diet Coke: {{ item.diet_coke }} | Sprite: {{ item.sprite }} | Coke Zero: {{ item.coke_zero }} | LaCroix Lemoncello: {{ item.lacroix_lemoncello }} | LaCroix Lime: {{ item.lacroix_lime }} | LaCroix Pamplemousse: {{ item.lacroix_pamplemousse }} | LaCroix Pasteque: {{ item.lacroix_pasteque }} | Horizon Milk: {{ item.horizon_milk }} | Lacroix Tangerine: {{ item.tangerine }} | LaCroix Berry: {{ item.lacroix_berry }} | Lacroix Lemon: {{ item.lemon }} | LaCroix Blackberry Cucumber: {{ item.lacroix_blackberry_cucumber }} | LaCroix Cherry Lime: {{ item.lacroix_cherry_lime }} | LaCroix Pineapple Strawberry: {{ item.lacroix_pineapple_strawberry }} | LaCroix Ki-Biscus: {{ item.lacroix_ki_biscus }}
             </div>
             <div class="delete-box">
                 <form action="{{ url_for('delete_drink_item', item_id=item.id) }}" method="POST" class="delete-form">

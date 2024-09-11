@@ -32,18 +32,18 @@ def add_drink_item():
         diet_coke=request.form['diet_coke_quantity'],
         sprite=request.form['sprite_quantity'],
         coke_zero=request.form['coke_zero_quantity'],
-        lacroix_lemoncello=request.form['lacroy_lemoncello_quantity'],
-        lacroix_lime=request.form['lacroy_lime_quantity'],
-        lacroix_pamplemousse=request.form['lacroy_pamplemousse_quantity'],
-        lacroix_pasteque=request.form['lacroy_pasteque_quantity'],
+        lacroix_lemoncello=request.form['lacroix_lemoncello_quantity'],
+        lacroix_lime=request.form['lacroix_lime_quantity'],
+        lacroix_pamplemousse=request.form['lacroix_pamplemousse_quantity'],
+        lacroix_pasteque=request.form['lacroix_pasteque_quantity'],
         horizon_milk=request.form['horizon_milk_quantity'],
         tangerine=request.form['tangerine_quantity'],
-        lacroix_berry=request.form['lacroy_berry_quantity'],
+        lacroix_berry=request.form['lacroix_berry_quantity'],
         lemon=request.form['lemon_quantity'],
-        lacroix_blackberry_cucumber=request.form['lacroy_blackberry_cucumber_quantity'],
-        lacroix_cherry_lime=request.form['lacroy_cherry_lime_quantity'],
-        lacroix_pineapple_strawberry=request.form['lacroy_pineapple_strawberry_quantity'],
-        lacroix_ki_biscus=request.form['lacroy_ki_biscus_quantity']
+        lacroix_blackberry_cucumber=request.form['lacroix_blackberry_cucumber_quantity'],
+        lacroix_cherry_lime=request.form['lacroix_cherry_lime_quantity'],
+        lacroix_pineapple_strawberry=request.form['lacroix_pineapple_strawberry_quantity'],
+        lacroix_ki_biscus=request.form['lacroix_ki_biscus_quantity']
     )
     db.session.add(new_item)
     db.session.commit()
