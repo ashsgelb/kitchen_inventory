@@ -3,29 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keurig Inventory</title>
+    <title>Keurig Cups Inventory</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Keurig Inventory</h1>
-    <form action="{{ url_for('add_keurig_item') }}" method="POST">
-        <label for="keurig_quantity">Keurig Quantity:</label>
-        <input type="number" id="keurig_quantity" name="keurig_quantity" min="0" required><br><br>
+    <h1>Keurig Cups Inventory</h1>
 
-        <input type="submit" value="Add Item">
+    <form action="{{ url_for('add_keurig_item') }}" method="POST">
+        <div class="keurig-category">
+            <h2>BRAND (GREEN MOUNTAIN)</h2>
+            <label for="half_caff_quantity">Half-Caff (Half Caffeine Medium Roast) Quantity:</label>
+            <input type="number" id="half_caff_quantity" name="half_caff_quantity" min="0" required><br><br>
+
+            <label for="breakfast_blend_quantity">Breakfast Blend (Light Roast) Quantity:</label>
+            <input type="number" id="breakfast_blend_quantity" name="breakfast_blend_quantity" min="0" required><br><br>
+
+            <label for="breakfast_blend_decaf_quantity">Breakfast Blend (Decaf Light Roast) Quantity:</label>
+            <input type="number" id="breakfast_blend_decaf_quantity" name="breakfast_blend_decaf_quantity" min="0" required><br><br>
+
+            <label for="colombia_select_quantity">Colombia Select (Medium Roast) Quantity:</label>
+            <input type="number" id="colombia_select_quantity" name="colombia_select_quantity" min="0" required><br><br>
+
+            <label for="nantucket_blend_quantity">Nantucket Blend (Medium Roast) Quantity:</label>
+            <input type="number" id="nantucket_blend_quantity" name="nantucket_blend_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (BIGELOW)</h2>
+            <label for="bigelow_lemon_echinacea_quantity">Lemon & Echinacea Herbal Tea Quantity:</label>
+            <input type="number" id="bigelow_lemon_echinacea_quantity" name="bigelow_lemon_echinacea_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (SWISS MISS)</h2>
+            <label for="swiss_miss_milk_chocolate_quantity">Milk Chocolate Quantity:</label>
+            <input type="number" id="swiss_miss_milk_chocolate_quantity" name="swiss_miss_milk_chocolate_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (THE ORIGINAL DONUT SHOP)</h2>
+            <label for="vanilla_latte_quantity">Vanilla Latte Quantity:</label>
+            <input type="number" id="vanilla_latte_quantity" name="vanilla_latte_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (CAFE ESCAPES)</h2>
+            <label for="chai_latte_quantity">Chai Latte Quantity:</label>
+            <input type="number" id="chai_latte_quantity" name="chai_latte_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (CAFE BUSTELO)</h2>
+            <label for="cafe_bustelo_dark_roast_quantity">Cafe Tostado Oscuro Dark Roast Coffee Quantity:</label>
+            <input type="number" id="cafe_bustelo_dark_roast_quantity" name="cafe_bustelo_dark_roast_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (CELESTIAL SEASONINGS)</h2>
+            <label for="mandarin_orange_spice_quantity">Mandarin Orange Spice Quantity:</label>
+            <input type="number" id="mandarin_orange_spice_quantity" name="mandarin_orange_spice_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (TIM HORTONS)</h2>
+            <label for="tim_hortons_original_quantity">Tim Hortons Original Quantity:</label>
+            <input type="number" id="tim_hortons_original_quantity" name="tim_hortons_original_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (KIRKLAND)</h2>
+            <label for="light_roast_quantity">Light Roast Coffee Breakfast Blend Quantity:</label>
+            <input type="number" id="light_roast_quantity" name="light_roast_quantity" min="0" required><br><br>
+
+            <label for="house_decaf_quantity">House Decaf Medium Roast Quantity:</label>
+            <input type="number" id="house_decaf_quantity" name="house_decaf_quantity" min="0" required><br><br>
+        </div>
+
+        <div class="keurig-category">
+            <h2>BRAND (DUNKIN DONUTS)</h2>
+            <label for="dunkin_original_blend_quantity">Original Blend (Medium) Quantity:</label>
+            <input type="number" id="dunkin_original_blend_quantity" name="dunkin_original_blend_quantity" min="0" required><br><br>
+        </div>
+
+        <input type="submit" value="Add Items">
     </form>
 
     <h2>Inventory List</h2>
     <ul>
         {% for item in items %}
-            <li class="inventory-item">
-                <span>Date: {{ item.date }} | Keurig: {{ item.keurig }}</span>
+        <li class="inventory-item">
+            <div class="item-box">
+                <div class="date-box">
+                    <b>Date</b>: {{ item.date }}
+                </div>
+                <div class="item-box">
+                    <b>BRAND (GREEN MOUNTAIN)</b>: Half-Caff = {{ item.half_caff }}, Breakfast Blend = {{ item.breakfast_blend }}, Breakfast Blend Decaf = {{ item.breakfast_blend_decaf }}, Colombia Select = {{ item.colombia_select }}, Nantucket Blend = {{ item.nantucket_blend }} <br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (BIGELOW)</b>: Lemon & Echinacea Herbal Tea = {{ item.bigelow_lemon_echinacea }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (SWISS MISS)</b>: Milk Chocolate = {{ item.swiss_miss_milk_chocolate }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (THE ORIGINAL DONUT SHOP)</b>: Vanilla Latte = {{ item.vanilla_latte }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (CAFE ESCAPES)</b>: Chai Latte = {{ item.chai_latte }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (CAFE BUSTELO)</b>: Cafe Tostado Oscuro Dark Roast Coffee = {{ item.cafe_bustelo_dark_roast }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (CELESTIAL SEASONINGS)</b>: Mandarin Orange Spice = {{ item.mandarin_orange_spice }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (TIM HORTONS)</b>: Tim Hortons Original = {{ item.tim_hortons_original }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (KIRKLAND)</b>: Light Roast Coffee Breakfast Blend = {{ item.light_roast }}, House Decaf Medium Roast = {{ item.house_decaf }}<br>
+                </div>
+                <div class="item-box">
+                    <b>BRAND (DUNKIN DONUTS)</b>: Original Blend = {{ item.dunkin_original_blend }}<br>
+                </div>
+            </div>
+            <div class="delete-box">
                 <form action="{{ url_for('delete_keurig_item', item_id=item.id) }}" method="POST" class="delete-form">
                     <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
                 </form>
-            </li>
+            </div>
+        </li>
         {% endfor %}
     </ul>
+
     <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
 </body>
 </html>

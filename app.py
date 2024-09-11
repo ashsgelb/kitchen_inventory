@@ -67,7 +67,21 @@ def keurig_inventory_page():
 def add_keurig_item():
     new_item = KeurigInventory(
         date=datetime.now().strftime('%Y-%m-%d'),
-        keurig=request.form['keurig_quantity']
+        half_caff=request.form['half_caff_quantity'],
+        breakfast_blend=request.form['breakfast_blend_quantity'],
+        breakfast_blend_decaf=request.form['breakfast_blend_decaf_quantity'],
+        colombia_select=request.form['colombia_select_quantity'],
+        nantucket_blend=request.form['nantucket_blend_quantity'],
+        bigelow_lemon_echinacea=request.form['bigelow_lemon_echinacea_quantity'],
+        swiss_miss_milk_chocolate=request.form['swiss_miss_milk_chocolate_quantity'],
+        vanilla_latte=request.form['vanilla_latte_quantity'],
+        chai_latte=request.form['chai_latte_quantity'],
+        cafe_bustelo_dark_roast=request.form['cafe_bustelo_dark_roast_quantity'],
+        mandarin_orange_spice=request.form['mandarin_orange_spice_quantity'],
+        tim_hortons_original=request.form['tim_hortons_original_quantity'],
+        light_roast=request.form['light_roast_quantity'],
+        house_decaf=request.form['house_decaf_quantity'],
+        dunkin_original_blend=request.form['dunkin_original_blend_quantity']
     )
     db.session.add(new_item)
     db.session.commit()

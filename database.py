@@ -29,7 +29,22 @@ class DrinkInventory(db.Model):
 class KeurigInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10), nullable=False)
-    keurig = db.Column(db.Integer, nullable=False)
+    half_caff = db.Column(db.Integer, nullable=False)
+    breakfast_blend = db.Column(db.Integer, nullable=False)
+    breakfast_blend_decaf = db.Column(db.Integer, nullable=False)
+    colombia_select = db.Column(db.Integer, nullable=False)
+    nantucket_blend = db.Column(db.Integer, nullable=False)
+    bigelow_lemon_echinacea = db.Column(db.Integer, nullable=False)
+    swiss_miss_milk_chocolate = db.Column(db.Integer, nullable=False)
+    vanilla_latte = db.Column(db.Integer, nullable=False)
+    chai_latte = db.Column(db.Integer, nullable=False)
+    cafe_bustelo_dark_roast = db.Column(db.Integer, nullable=False)
+    mandarin_orange_spice = db.Column(db.Integer, nullable=False)
+    tim_hortons_original = db.Column(db.Integer, nullable=False)
+    light_roast = db.Column(db.Integer, nullable=False)
+    house_decaf = db.Column(db.Integer, nullable=False)
+    dunkin_original_blend = db.Column(db.Integer, nullable=False)
+
 
 class NespressoInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
