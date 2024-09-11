@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Nespresso Inventory</h1>
+    <form action="{{ url_for('add_nespresso_item') }}" method="POST">
+        <label for="nespresso_quantity">Nespresso Quantity:</label>
+        <input type="number" id="nespresso_quantity" name="nespresso_quantity" min="0" required><br><br>
+
+        <input type="submit" value="Add Item">
+    </form>
+
+    <h2>Inventory List</h2>
+    <ul>
+        {% for item in items %}
+            <li class="inventory-item">
+                <span>Date: {{ item.date }} | Nespresso: {{ item.nespresso }}</span>
+                <form action="{{ url_for('delete_nespresso_item', item_id=item.id) }}" method="POST" class="delete-form">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

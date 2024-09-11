@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Inventory Directory</h1>
+    <ul>
+        <li><a href="{{ url_for('drink_inventory_page') }}">Drink Inventory</a></li>
+        <li><a href="{{ url_for('keurig_inventory_page') }}">Keurig Inventory</a></li>
+        <li><a href="{{ url_for('nespresso_inventory_page') }}">Nespresso Inventory</a></li>
+        <li><a href="{{ url_for('snack_inventory_page') }}">Snack Inventory</a></li>
+        <li><a href="{{ url_for('office_supply_inventory_page') }}">Office Supply Inventory</a></li>
+    </ul>
+</body>
+</html>

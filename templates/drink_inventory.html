@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drink Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Additional CSS for styling the delete button box */
+        .inventory-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .delete-form {
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .delete-form input[type="submit"] {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-form input[type="submit"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drink Inventory</h1>
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+
+    <form action="{{ url_for('add_drink_item') }}" method="POST">
+        <label for="coke_quantity">Coke Quantity:</label>
+        <input type="number" id="coke_quantity" name="coke_quantity" min="0" required><br><br>
+
+        <label for="diet_coke_quantity">Diet Coke Quantity:</label>
+        <input type="number" id="diet_coke_quantity" name="diet_coke_quantity" min="0" required><br><br>
+
+        <label for="sprite_quantity">Sprite Quantity:</label>
+        <input type="number" id="sprite_quantity" name="sprite_quantity" min="0" required><br><br>
+
+        <label for="coke_zero_quantity">Coke Zero Quantity:</label>
+        <input type="number" id="coke_zero_quantity" name="coke_zero_quantity" min="0" required><br><br>
+
+        <label for="lacroy_lemoncello_quantity">LaCroix Lemoncello Quantity:</label>
+        <input type="number" id="lacroy_lemoncello_quantity" name="lacroy_lemoncello_quantity" min="0" required><br><br>
+
+        <label for="lacroy_lime_quantity">LaCroix Lime Quantity:</label>
+        <input type="number" id="lacroy_lime_quantity" name="lacroy_lime_quantity" min="0" required><br><br>
+
+        <label for="lacroy_pamplemousse_quantity">LaCroix Pamplemousse/Grapefruit Quantity:</label>
+        <input type="number" id="lacroy_pamplemousse_quantity" name="lacroy_pamplemousse_quantity" min="0" required><br><br>
+
+        <label for="lacroy_pasteque_quantity">LaCroix Pasteque/Watermelon Quantity:</label>
+        <input type="number" id="lacroy_pasteque_quantity" name="lacroy_pasteque_quantity" min="0" required><br><br>
+
+        <label for="horizon_milk_quantity">Horizon Organic Milk Quantity:</label>
+        <input type="number" id="horizon_milk_quantity" name="horizon_milk_quantity" min="0" required><br><br>
+
+        <label for="tangerine_quantity">Tangerine Quantity:</label>
+        <input type="number" id="tangerine_quantity" name="tangerine_quantity" min="0" required><br><br>
+
+        <label for="lacroy_berry_quantity">LaCroix Berry Quantity:</label>
+        <input type="number" id="lacroy_berry_quantity" name="lacroy_berry_quantity" min="0" required><br><br>
+
+        <label for="lemon_quantity">Lemon Quantity:</label>
+        <input type="number" id="lemon_quantity" name="lemon_quantity" min="0" required><br><br>
+
+        <label for="lacroy_blackberry_cucumber_quantity">LaCroix Blackberry Cucumber Quantity:</label>
+        <input type="number" id="lacroy_blackberry_cucumber_quantity" name="lacroy_blackberry_cucumber_quantity" min="0" required><br><br>
+
+        <label for="lacroy_cherry_lime_quantity">LaCroix Cherry Lime Quantity:</label>
+        <input type="number" id="lacroy_cherry_lime_quantity" name="lacroy_cherry_lime_quantity" min="0" required><br><br>
+
+        <label for="lacroy_pineapple_strawberry_quantity">LaCroix Pineapple Strawberry Quantity:</label>
+        <input type="number" id="lacroy_pineapple_strawberry_quantity" name="lacroy_pineapple_strawberry_quantity" min="0" required><br><br>
+
+        <label for="lacroy_ki_biscus_quantity">LaCroix Ki-Biscus Quantity:</label>
+        <input type="number" id="lacroy_ki_biscus_quantity" name="lacroy_ki_biscus_quantity" min="0" required><br><br>
+
+        <input type="submit" value="Add Items">
+    </form>
+
+    <h2>Inventory List</h2>
+    <ul>
+        {% for item in items %}
+        <li class="inventory-item">
+            <div class="item-info">
+                Date: {{ item.date }} | Coke: {{ item.coke }} | Diet Coke: {{ item.diet_coke }} | Sprite: {{ item.sprite }} | Coke Zero: {{ item.coke_zero }} | LaCroix Lemoncello: {{ item.lacroix_lemoncello }} | LaCroix Lime: {{ item.lacroy_lime }} | LaCroix Pamplemousse: {{ item.lacroy_pamplemousse }} | LaCroix Pasteque: {{ item.lacroy_pasteque }} | Horizon Milk: {{ item.horizon_milk }} | Tangerine: {{ item.tangerine }} | LaCroix Berry: {{ item.lacroy_berry }} | Lemon: {{ item.lemon }} | LaCroix Blackberry Cucumber: {{ item.lacroy_blackberry_cucumber }} | LaCroix Cherry Lime: {{ item.lacroy_cherry_lime }} | LaCroix Pineapple Strawberry: {{ item.lacroy_pineapple_strawberry }} | LaCroix Ki-Biscus: {{ item.lacroy_ki_biscus }}
+            </div>
+            <div class="delete-box">
+                <form action="{{ url_for('delete_drink_item', item_id=item.id) }}" method="POST" class="delete-form">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

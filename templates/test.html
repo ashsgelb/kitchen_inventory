@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Fridge Inventory</h1>
+    <form action="/add-item" method="POST">
+        <label for="diet_coke_quantity">Diet Coke Quantity:</label>
+        <input type="number" id="diet_coke_quantity" name="diet_coke_quantity" min="0" required><br><br>
+
+        <label for="coke_quantity">Coke Quantity:</label>
+        <input type="number" id="coke_quantity" name="coke_quantity" min="0" required><br><br>
+
+        <label for="lacroix_quantity">Lacroix Quantity:</label>
+        <input type="number" id="lacroix_quantity" name="lacroix_quantity" min="0" required><br><br>
+
+        <input type="submit" value="Add Items">
+    </form>
+
+    <h2>Inventory List</h2>
+    <ul>
+        {% for item in items %}
+            <li class="inventory-item">
+                <span>Date: {{ item['date'] }} | Diet Coke: {{ item['diet_coke'] }} | Coke: {{ item['coke'] }} | Lacroix: {{ item['lacroix'] }}</span>
+                <form action="{{ url_for('delete_item', item_id=item['id']) }}" method="POST" class="delete-form">
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
