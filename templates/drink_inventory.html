@@ -10,72 +10,92 @@
     <h1>Drink Inventory</h1>
 
     <form action="{{ url_for('add_drink_item') }}" method="POST">
-        <label for="coke_quantity">Coke Quantity:</label>
-        <input type="number" id="coke_quantity" name="coke_quantity" min="0" required><br><br>
+        <div class="drink-category">
+            <h2>Soda</h2>
+            <label for="coke_quantity">Coke Quantity:</label>
+            <input type="number" id="coke_quantity" name="coke_quantity" min="0" required><br><br>
 
-        <label for="diet_coke_quantity">Diet Coke Quantity:</label>
-        <input type="number" id="diet_coke_quantity" name="diet_coke_quantity" min="0" required><br><br>
+            <label for="diet_coke_quantity">Diet Coke Quantity:</label>
+            <input type="number" id="diet_coke_quantity" name="diet_coke_quantity" min="0" required><br><br>
 
-        <label for="sprite_quantity">Sprite Quantity:</label>
-        <input type="number" id="sprite_quantity" name="sprite_quantity" min="0" required><br><br>
+            <label for="sprite_quantity">Sprite Quantity:</label>
+            <input type="number" id="sprite_quantity" name="sprite_quantity" min="0" required><br><br>
 
-        <label for="coke_zero_quantity">Coke Zero Quantity:</label>
-        <input type="number" id="coke_zero_quantity" name="coke_zero_quantity" min="0" required><br><br>
+            <label for="coke_zero_quantity">Coke Zero Quantity:</label>
+            <input type="number" id="coke_zero_quantity" name="coke_zero_quantity" min="0" required><br><br>
+        </div>
 
-        <label for="lacroix_lemoncello_quantity">LaCroix Lemoncello Quantity:</label>
-        <input type="number" id="lacroix_lemoncello_quantity" name="lacroix_lemoncello_quantity" min="0" required><br><br>
+        <div class="drink-category">
+            <h2>LaCroix</h2>
+            <label for="tangerine_quantity">Tangerine Quantity:</label>
+            <input type="number" id="tangerine_quantity" name="tangerine_quantity" min="0" required><br><br>
 
-        <label for="lacroix_lime_quantity">LaCroix Lime Quantity:</label>
-        <input type="number" id="lacroix_lime_quantity" name="lacroix_lime_quantity" min="0" required><br><br>
+            <label for="lacroix_lemoncello_quantity">Lemoncello Quantity:</label>
+            <input type="number" id="lacroix_lemoncello_quantity" name="lacroix_lemoncello_quantity" min="0" required><br><br>
 
-        <label for="lacroix_pamplemousse_quantity">LaCroix Pamplemousse/Grapefruit Quantity:</label>
-        <input type="number" id="lacroix_pamplemousse_quantity" name="lacroix_pamplemousse_quantity" min="0" required><br><br>
+            <label for="lacroix_lime_quantity">Lime Quantity:</label>
+            <input type="number" id="lacroix_lime_quantity" name="lacroix_lime_quantity" min="0" required><br><br>
 
-        <label for="lacroix_pasteque_quantity">LaCroix Pasteque/Watermelon Quantity:</label>
-        <input type="number" id="lacroix_pasteque_quantity" name="lacroix_pasteque_quantity" min="0" required><br><br>
+            <label for="lacroix_pamplemousse_quantity">Pamplemousse/Grapefruit Quantity:</label>
+            <input type="number" id="lacroix_pamplemousse_quantity" name="lacroix_pamplemousse_quantity" min="0" required><br><br>
 
-        <label for="horizon_milk_quantity">Horizon Organic Milk Quantity:</label>
-        <input type="number" id="horizon_milk_quantity" name="horizon_milk_quantity" min="0" required><br><br>
+            <label for="lacroix_pasteque_quantity">Pasteque/Watermelon Quantity:</label>
+            <input type="number" id="lacroix_pasteque_quantity" name="lacroix_pasteque_quantity" min="0" required><br><br>
 
-        <label for="tangerine_quantity">Lacroix Tangerine Quantity:</label>
-        <input type="number" id="tangerine_quantity" name="tangerine_quantity" min="0" required><br><br>
+            <label for="lacroix_berry_quantity">Berry Quantity:</label>
+            <input type="number" id="lacroix_berry_quantity" name="lacroix_berry_quantity" min="0" required><br><br>
 
-        <label for="lacroix_berry_quantity">LaCroix Berry Quantity:</label>
-        <input type="number" id="lacroix_berry_quantity" name="lacroix_berry_quantity" min="0" required><br><br>
+            <label for="lemon_quantity">Lemon Quantity:</label>
+            <input type="number" id="lemon_quantity" name="lemon_quantity" min="0" required><br><br>
 
-        <label for="lemon_quantity">Lacroix Lemon Quantity:</label>
-        <input type="number" id="lemon_quantity" name="lemon_quantity" min="0" required><br><br>
+            <label for="lacroix_blackberry_cucumber_quantity">Blackberry Cucumber Quantity:</label>
+            <input type="number" id="lacroix_blackberry_cucumber_quantity" name="lacroix_blackberry_cucumber_quantity" min="0" required><br><br>
 
-        <label for="lacroix_blackberry_cucumber_quantity">LaCroix Blackberry Cucumber Quantity:</label>
-        <input type="number" id="lacroix_blackberry_cucumber_quantity" name="lacroix_blackberry_cucumber_quantity" min="0" required><br><br>
+            <label for="lacroix_cherry_lime_quantity">Cherry Lime Quantity:</label>
+            <input type="number" id="lacroix_cherry_lime_quantity" name="lacroix_cherry_lime_quantity" min="0" required><br><br>
 
-        <label for="lacroix_cherry_lime_quantity">LaCroix Cherry Lime Quantity:</label>
-        <input type="number" id="lacroix_cherry_lime_quantity" name="lacroix_cherry_lime_quantity" min="0" required><br><br>
+            <label for="lacroix_pineapple_strawberry_quantity">Pineapple Strawberry Quantity:</label>
+            <input type="number" id="lacroix_pineapple_strawberry_quantity" name="lacroix_pineapple_strawberry_quantity" min="0" required><br><br>
 
-        <label for="lacroix_pineapple_strawberry_quantity">LaCroix Pineapple Strawberry Quantity:</label>
-        <input type="number" id="lacroix_pineapple_strawberry_quantity" name="lacroix_pineapple_strawberry_quantity" min="0" required><br><br>
+            <label for="lacroix_ki_biscus_quantity">Ki-Biscus Quantity:</label>
+            <input type="number" id="lacroix_ki_biscus_quantity" name="lacroix_ki_biscus_quantity" min="0" required><br><br>
+        </div>
 
-        <label for="lacroix_ki_biscus_quantity">LaCroix Ki-Biscus Quantity:</label>
-        <input type="number" id="lacroix_ki_biscus_quantity" name="lacroix_ki_biscus_quantity" min="0" required><br><br>
+        <div class="drink-category">
+            <h2>Other</h2>
+            <label for="horizon_milk_quantity">Horizon Organic Milk Quantity:</label>
+            <input type="number" id="horizon_milk_quantity" name="horizon_milk_quantity" min="0" required><br><br>
+        </div>
 
         <input type="submit" value="Add Items">
     </form>
 
     <h2>Inventory List</h2>
-    <ul>
-        {% for item in items %}
-        <li class="inventory-item">
-            <div class="item-info">
-                Date: {{ item.date }} | Coke: {{ item.coke }} | Diet Coke: {{ item.diet_coke }} | Sprite: {{ item.sprite }} | Coke Zero: {{ item.coke_zero }} | LaCroix Lemoncello: {{ item.lacroix_lemoncello }} | LaCroix Lime: {{ item.lacroix_lime }} | LaCroix Pamplemousse: {{ item.lacroix_pamplemousse }} | LaCroix Pasteque: {{ item.lacroix_pasteque }} | Horizon Milk: {{ item.horizon_milk }} | Lacroix Tangerine: {{ item.tangerine }} | LaCroix Berry: {{ item.lacroix_berry }} | Lacroix Lemon: {{ item.lemon }} | LaCroix Blackberry Cucumber: {{ item.lacroix_blackberry_cucumber }} | LaCroix Cherry Lime: {{ item.lacroix_cherry_lime }} | LaCroix Pineapple Strawberry: {{ item.lacroix_pineapple_strawberry }} | LaCroix Ki-Biscus: {{ item.lacroix_ki_biscus }}
+<ul>
+    {% for item in items %}
+    <li class="inventory-item">
+        <div class="item-box">
+            <div class="date-box">
+                <b>Date</b>: {{ item.date }}
             </div>
-            <div class="delete-box">
-                <form action="{{ url_for('delete_drink_item', item_id=item.id) }}" method="POST" class="delete-form">
-                    <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
-                </form>
+            <div class="item-box">
+                <b>Soda</b>: Coke = {{ item.coke }}, Diet Coke = {{ item.diet_coke }}, Sprite = {{ item.sprite }}, Coke Zero = {{ item.coke_zero }} <br>
             </div>
-        </li>
-        {% endfor %}
-    </ul>
+            <div class="item-box">
+                <b>Lacroix</b>: Lemoncello = {{ item.lacroix_lemoncello }}, Lime= {{ item.lacroix_lime }}, Pamplemousse= {{ item.lacroix_pamplemousse }}, Pasteque= {{ item.lacroix_pasteque }}, Tangerine= {{ item.tangerine }}, Berry= {{ item.lacroix_berry }}, Lemon= {{ item.lemon }}, Blackberry Cucumber= {{ item.lacroix_blackberry_cucumber }}, Cherry Lime= {{ item.lacroix_cherry_lime }}, Pineapple Strawberry= {{ item.lacroix_pineapple_strawberry }}, Ki-Biscus= {{ item.lacroix_ki_biscus }}
+            </div>
+            <div class="item-box">
+                <b>Other</b>: Horizon Milk = {{ item.horizon_milk }}
+            </div>      
+        </div>
+        <div class="delete-box">
+            <form action="{{ url_for('delete_drink_item', item_id=item.id) }}" method="POST" class="delete-form">
+                <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
+            </form>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 
     <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
 </body>

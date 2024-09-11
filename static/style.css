@@ -68,3 +68,20 @@ li {
 .delete-form input[type="submit"]:hover {
     background-color: #c82333; /* Darker red for hover */
 }
+
+.item-box {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.date-box {
+    background-color: #86919c88;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
