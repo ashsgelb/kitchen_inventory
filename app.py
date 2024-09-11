@@ -1,4 +1,4 @@
-# to add all of my stuff to a database
+# helps with the data
 from flask import Flask, render_template, request, redirect, url_for
 from datetime import datetime
 from database import db, DrinkInventory, KeurigInventory, NespressoInventory, SnackInventory, OfficeSupplyInventory
