@@ -5,46 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Inventory</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        /* Additional CSS for styling the delete button box */
-        .inventory-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .item-info {
-            flex: 1;
-        }
-
-        .delete-form {
-            margin: 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .delete-form input[type="submit"] {
-            padding: 5px 10px;
-            background-color: #dc3545;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .delete-form input[type="submit"]:hover {
-            background-color: #c82333;
-        }
-    </style>
 </head>
 <body>
     <h1>Drink Inventory</h1>
-    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
 
     <form action="{{ url_for('add_drink_item') }}" method="POST">
         <label for="coke_quantity">Coke Quantity:</label>
@@ -113,5 +76,7 @@
         </li>
         {% endfor %}
     </ul>
+
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
 </body>
 </html>

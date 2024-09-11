@@ -56,6 +56,15 @@ li {
     align-items: center;
 }
 
-.delete-form {
-    margin: 0;
+.delete-form input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #dc3545; /* Red background color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-form input[type="submit"]:hover {
+    background-color: #c82333; /* Darker red for hover */
 }
