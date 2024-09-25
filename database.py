@@ -44,7 +44,7 @@ class KeurigInventory(db.Model):
     light_roast = db.Column(db.Integer, nullable=False)
     house_decaf = db.Column(db.Integer, nullable=False)
     dunkin_original_blend = db.Column(db.Integer, nullable=False)
-
+    
 
 class NespressoInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,7 +54,18 @@ class NespressoInventory(db.Model):
 class SnackInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10), nullable=False)
-    snack = db.Column(db.String(100), nullable=False)
+    baked_chips = db.Column(db.Integer, nullable=False)
+    kirkland_snacking_nuts = db.Column(db.Integer, nullable=False)
+    kirkland_trail_mix = db.Column(db.Integer, nullable=False)
+    popcorn = db.Column(db.Integer, nullable=False)
+    kirkland_nut_bars = db.Column(db.Integer, nullable=False)
+    fruit_strips_variety_pack = db.Column(db.Integer, nullable=False)
+    cheez_it_snapped = db.Column(db.Integer, nullable=False)
+    skinny_pop = db.Column(db.Integer, nullable=False)
+    nature_valley_protein_bars = db.Column(db.Integer, nullable=False)
+    sun_chips = db.Column(db.Integer, nullable=False)
+    cheez_it = db.Column(db.Integer, nullable=False)
+    pretzels = db.Column(db.Integer, nullable=False)
 
 class OfficeSupplyInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
