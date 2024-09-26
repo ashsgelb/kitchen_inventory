@@ -49,7 +49,19 @@ class KeurigInventory(db.Model):
 class NespressoInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10), nullable=False)
-    nespresso = db.Column(db.Integer, nullable=False)
+    de_scuro = db.Column(db.Integer, nullable=False)
+    il_caffe = db.Column(db.Integer, nullable=False)
+    voltesso = db.Column(db.Integer, nullable=False)
+    fortado = db.Column(db.Integer, nullable=False)
+    toccanto = db.Column(db.Integer, nullable=False)
+    festive_black = db.Column(db.Integer, nullable=False)
+    seasonal_delight_spices = db.Column(db.Integer, nullable=False)
+    frosted_caramel_nut = db.Column(db.Integer, nullable=False)
+    stormio = db.Column(db.Integer, nullable=False)
+    half_caffeinato = db.Column(db.Integer, nullable=False)
+    melozio = db.Column(db.Integer, nullable=False)
+    mexico_mexique = db.Column(db.Integer, nullable=False)
+    melozio_decaffeinato_coffee = db.Column(db.Integer, nullable=False)
 
 class SnackInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -71,3 +83,4 @@ class OfficeSupplyInventory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.String(10), nullable=False)
     office_supply = db.Column(db.String(100), nullable=False)
+    name = db.Column(db.String(100), nullable=False)

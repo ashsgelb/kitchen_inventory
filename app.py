@@ -10,7 +10,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize the database
 db.init_app(app)
 
-# # WARNING: This will remove all data!
+# WARNING: This will remove all data!
 # with app.app_context():
 #     db.drop_all()  # This drops all tables
 #     db.create_all()  # This creates them again
@@ -111,7 +111,19 @@ def nespresso_inventory_page():
 def add_nespresso_item():
     new_item = NespressoInventory(
         date=datetime.now().strftime('%Y-%m-%d %I:%M %p'),
-        nespresso=request.form['nespresso_quantity']
+        de_scuro=request.form['de_scuro_quantity'],
+        il_caffe=request.form['il_caffe_quantity'],
+        voltesso=request.form['voltesso_quantity'],
+        fortado=request.form['fortado_quantity'],
+        toccanto=request.form['toccanto_quantity'],
+        festive_black=request.form['festive_black_quantity'],
+        seasonal_delight_spices=request.form['seasonal_delight_spices_quantity'],
+        frosted_caramel_nut=request.form['frosted_caramel_nut_quantity'],
+        stormio=request.form['stormio_quantity'],
+        half_caffeinato=request.form['half_caffeinato_quantity'],
+        melozio=request.form['melozio_quantity'],
+        mexico_mexique=request.form['mexico_mexique_quantity'],
+        melozio_decaffeinato_coffee=request.form['melozio_decaffeinato_coffee_quantity']
     )
     db.session.add(new_item)
     db.session.commit()
@@ -170,7 +182,8 @@ def office_supply_inventory_page():
 def add_office_supply_item():
     new_item = OfficeSupplyInventory(
         date=datetime.now().strftime('%Y-%m-%d %I:%M %p'),
-        office_supply=request.form['office_supply_name']
+        office_supply=request.form['office_supply_name'],
+        name=request.form['name']
     )
     db.session.add(new_item)
     db.session.commit()

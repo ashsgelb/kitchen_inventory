@@ -9,9 +9,11 @@
 <body>
     <h1>Keurig Cups Inventory</h1>
 
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+
     <form action="{{ url_for('add_keurig_item') }}" method="POST">
         <div class="keurig-category">
-            <h2>BRAND (GREEN MOUNTAIN)</h2>
+            <h2>GREEN MOUNTAIN</h2>
             <label for="half_caff_quantity">Half-Caff (Half Caffeine Medium Roast) Quantity:</label>
             <input type="number" id="half_caff_quantity" name="half_caff_quantity" min="0" required><br><br>
 
@@ -29,43 +31,43 @@
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (BIGELOW)</h2>
+            <h2>BIGELOW</h2>
             <label for="bigelow_lemon_echinacea_quantity">Lemon & Echinacea Herbal Tea Quantity:</label>
             <input type="number" id="bigelow_lemon_echinacea_quantity" name="bigelow_lemon_echinacea_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (SWISS MISS)</h2>
+            <h2>SWISS MISS</h2>
             <label for="swiss_miss_milk_chocolate_quantity">Milk Chocolate Quantity:</label>
             <input type="number" id="swiss_miss_milk_chocolate_quantity" name="swiss_miss_milk_chocolate_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (THE ORIGINAL DONUT SHOP)</h2>
+            <h2>THE ORIGINAL DONUT SHOP</h2>
             <label for="vanilla_latte_quantity">Vanilla Latte Quantity:</label>
             <input type="number" id="vanilla_latte_quantity" name="vanilla_latte_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (CAFE ESCAPES)</h2>
+            <h2>CAFE ESCAPES</h2>
             <label for="chai_latte_quantity">Chai Latte Quantity:</label>
             <input type="number" id="chai_latte_quantity" name="chai_latte_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (CAFE BUSTELO)</h2>
+            <h2>CAFE BUSTELO</h2>
             <label for="cafe_bustelo_dark_roast_quantity">Cafe Tostado Oscuro Dark Roast Coffee Quantity:</label>
             <input type="number" id="cafe_bustelo_dark_roast_quantity" name="cafe_bustelo_dark_roast_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (CELESTIAL SEASONINGS)</h2>
+            <h2>CELESTIAL SEASONINGS</h2>
             <label for="mandarin_orange_spice_quantity">Mandarin Orange Spice Quantity:</label>
             <input type="number" id="mandarin_orange_spice_quantity" name="mandarin_orange_spice_quantity" min="0" required><br><br>
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (TIM HORTONS)</h2>
+            <h2>TIM HORTONS</h2>
             <label for="tim_hortons_original_quantity">Tim Hortons Original Quantity:</label>
             <input type="number" id="tim_hortons_original_quantity" name="tim_hortons_original_quantity" min="0" required><br><br>
         </div>
@@ -80,7 +82,7 @@
         </div>
 
         <div class="keurig-category">
-            <h2>BRAND (DUNKIN DONUTS)</h2>
+            <h2>DUNKIN DONUTS</h2>
             <label for="dunkin_original_blend_quantity">Original Blend (Medium) Quantity:</label>
             <input type="number" id="dunkin_original_blend_quantity" name="dunkin_original_blend_quantity" min="0" required><br><br>
         </div>
@@ -97,34 +99,34 @@
                     <b>Date</b>: {{ item.date }}
                 </div>
                 <div class="item-box">
-                    <b>BRAND (GREEN MOUNTAIN)</b>: Half-Caff = {{ item.half_caff }}, Breakfast Blend = {{ item.breakfast_blend }}, Breakfast Blend Decaf = {{ item.breakfast_blend_decaf }}, Colombia Select = {{ item.colombia_select }}, Nantucket Blend = {{ item.nantucket_blend }} <br>
+                    <b>GREEN MOUNTAIN</b>: Half-Caff = {{ item.half_caff }}, Breakfast Blend = {{ item.breakfast_blend }}, Breakfast Blend Decaf = {{ item.breakfast_blend_decaf }}, Colombia Select = {{ item.colombia_select }}, Nantucket Blend = {{ item.nantucket_blend }} <br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (BIGELOW)</b>: Lemon & Echinacea Herbal Tea = {{ item.bigelow_lemon_echinacea }}<br>
+                    <b>BIGELOW</b>: Lemon & Echinacea Herbal Tea = {{ item.bigelow_lemon_echinacea }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (SWISS MISS)</b>: Milk Chocolate = {{ item.swiss_miss_milk_chocolate }}<br>
+                    <b>SWISS MISS</b>: Milk Chocolate = {{ item.swiss_miss_milk_chocolate }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (THE ORIGINAL DONUT SHOP)</b>: Vanilla Latte = {{ item.vanilla_latte }}<br>
+                    <b>THE ORIGINAL DONUT SHOP</b>: Vanilla Latte = {{ item.vanilla_latte }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (CAFE ESCAPES)</b>: Chai Latte = {{ item.chai_latte }}<br>
+                    <b>CAFE ESCAPES</b>: Chai Latte = {{ item.chai_latte }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (CAFE BUSTELO)</b>: Cafe Tostado Oscuro Dark Roast Coffee = {{ item.cafe_bustelo_dark_roast }}<br>
+                    <b>CAFE BUSTELO</b>: Cafe Tostado Oscuro Dark Roast Coffee = {{ item.cafe_bustelo_dark_roast }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (CELESTIAL SEASONINGS)</b>: Mandarin Orange Spice = {{ item.mandarin_orange_spice }}<br>
+                    <b>CELESTIAL SEASONINGS</b>: Mandarin Orange Spice = {{ item.mandarin_orange_spice }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (TIM HORTONS)</b>: Tim Hortons Original = {{ item.tim_hortons_original }}<br>
+                    <b>TIM HORTONS</b>: Tim Hortons Original = {{ item.tim_hortons_original }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (KIRKLAND)</b>: Light Roast Coffee Breakfast Blend = {{ item.light_roast }}, House Decaf Medium Roast = {{ item.house_decaf }}<br>
+                    <b>KIRKLAND</b>: Light Roast Coffee Breakfast Blend = {{ item.light_roast }}, House Decaf Medium Roast = {{ item.house_decaf }}<br>
                 </div>
                 <div class="item-box">
-                    <b>BRAND (DUNKIN DONUTS)</b>: Original Blend = {{ item.dunkin_original_blend }}<br>
+                    <b>DUNKIN DONUTS</b>: Original Blend = {{ item.dunkin_original_blend }}<br>
                 </div>
             </div>
             <div class="delete-box">
@@ -136,6 +138,6 @@
         {% endfor %}
     </ul>
 
-    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+    <!-- <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br> -->
 </body>
 </html>

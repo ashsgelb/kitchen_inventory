@@ -8,24 +8,75 @@
 </head>
 <body>
     <h1>Nespresso Inventory</h1>
-    <form action="{{ url_for('add_nespresso_item') }}" method="POST">
-        <label for="nespresso_quantity">Nespresso Quantity:</label>
-        <input type="number" id="nespresso_quantity" name="nespresso_quantity" min="0" required><br><br>
 
-        <input type="submit" value="Add Item">
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+
+    <form action="{{ url_for('add_nespresso_item') }}" method="POST">
+        <div class="nespresso-category">
+            <h2>Nespresso Flavors</h2>
+
+            <label for="de_scuro_quantity">DE Scuro Quantity:</label>
+            <input type="number" id="de_scuro_quantity" name="de_scuro_quantity" min="0" required><br><br>
+
+            <label for="il_caffe_quantity">Il Caffe Quantity:</label>
+            <input type="number" id="il_caffe_quantity" name="il_caffe_quantity" min="0" required><br><br>
+
+            <label for="voltesso_quantity">Voltesso Quantity:</label>
+            <input type="number" id="voltesso_quantity" name="voltesso_quantity" min="0" required><br><br>
+
+            <label for="fortado_quantity">Fortado Quantity:</label>
+            <input type="number" id="fortado_quantity" name="fortado_quantity" min="0" required><br><br>
+
+            <label for="toccanto_quantity">Toccanto Quantity:</label>
+            <input type="number" id="toccanto_quantity" name="toccanto_quantity" min="0" required><br><br>
+
+            <label for="festive_black_quantity">Festive Black Quantity:</label>
+            <input type="number" id="festive_black_quantity" name="festive_black_quantity" min="0" required><br><br>
+
+            <label for="seasonal_delight_spices_quantity">Seasonal Delight Spices Quantity:</label>
+            <input type="number" id="seasonal_delight_spices_quantity" name="seasonal_delight_spices_quantity" min="0" required><br><br>
+
+            <label for="frosted_caramel_nut_quantity">Frosted Caramel Nut Quantity:</label>
+            <input type="number" id="frosted_caramel_nut_quantity" name="frosted_caramel_nut_quantity" min="0" required><br><br>
+
+            <label for="stormio_quantity">Stormio Quantity:</label>
+            <input type="number" id="stormio_quantity" name="stormio_quantity" min="0" required><br><br>
+
+            <label for="half_caffeinato_quantity">Half Caffeinato Quantity:</label>
+            <input type="number" id="half_caffeinato_quantity" name="half_caffeinato_quantity" min="0" required><br><br>
+
+            <label for="melozio_quantity">Melozio Quantity:</label>
+            <input type="number" id="melozio_quantity" name="melozio_quantity" min="0" required><br><br>
+
+            <label for="mexico_mexique_quantity">Mexico | Mexique Quantity:</label>
+            <input type="number" id="mexico_mexique_quantity" name="mexico_mexique_quantity" min="0" required><br><br>
+
+            <label for="melozio_decaffeinato_coffee_quantity">Melozio Decaffeinato Coffee Quantity:</label>
+            <input type="number" id="melozio_decaffeinato_coffee_quantity" name="melozio_decaffeinato_coffee_quantity" min="0" required><br><br>
+        </div>
+
+        <input type="submit" value="Add Items">
     </form>
 
     <h2>Inventory List</h2>
     <ul>
         {% for item in items %}
-            <li class="inventory-item">
-                <span>Date: {{ item.date }} | Nespresso: {{ item.nespresso }}</span>
+        <li class="inventory-item">
+            <div class="item-box">
+                <div class="date-box">
+                    <b>Date and Time</b>: {{ item.date }}
+                </div>
+                <div class="item-box">
+                    <b>Nespresso Flavors</b>: DE Scuro = {{ item.de_scuro }}, Il Caffe = {{ item.il_caffe }}, Voltesso = {{ item.voltesso }}, Fortado = {{ item.fortado }}, Toccanto = {{ item.toccanto }}, Festive Black = {{ item.festive_black }}, Seasonal Delight Spices = {{ item.seasonal_delight_spices }}, Frosted Caramel Nut = {{ item.frosted_caramel_nut }}, Stormio = {{ item.stormio }}, Half Caffeinato = {{ item.half_caffeinato }}, Melozio = {{ item.melozio }}, Mexico | Mexique = {{ item.mexico_mexique }}, Melozio Decaffeinato Coffee = {{ item.melozio_decaffeinato_coffee }}
+                </div>
+            </div>
+            <div class="delete-box">
                 <form action="{{ url_for('delete_nespresso_item', item_id=item.id) }}" method="POST" class="delete-form">
                     <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
                 </form>
-            </li>
+            </div>
+        </li>
         {% endfor %}
     </ul>
-    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
 </body>
 </html>

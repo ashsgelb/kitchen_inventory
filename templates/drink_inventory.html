@@ -9,9 +9,11 @@
 <body>
     <h1>Drink Inventory</h1>
 
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+
     <form action="{{ url_for('add_drink_item') }}" method="POST">
         <div class="drink-category">
-            <h2>Soda</h2>
+            <h2>SODA</h2>
             <label for="coke_quantity">Coke Quantity:</label>
             <input type="number" id="coke_quantity" name="coke_quantity" min="0" required><br><br>
 
@@ -26,7 +28,7 @@
         </div>
 
         <div class="drink-category">
-            <h2>LaCroix</h2>
+            <h2>LACROIX</h2>
             <label for="tangerine_quantity">Tangerine Quantity:</label>
             <input type="number" id="tangerine_quantity" name="tangerine_quantity" min="0" required><br><br>
 
@@ -62,7 +64,7 @@
         </div>
 
         <div class="drink-category">
-            <h2>Other</h2>
+            <h2>OTHER</h2>
             <label for="horizon_milk_quantity">Horizon Organic Milk Quantity:</label>
             <input type="number" id="horizon_milk_quantity" name="horizon_milk_quantity" min="0" required><br><br>
         </div>
@@ -79,13 +81,13 @@
                 <b>Date and Time</b>: {{ item.date }}
             </div>
             <div class="item-box">
-                <b>Soda</b>: Coke = {{ item.coke }}, Diet Coke = {{ item.diet_coke }}, Sprite = {{ item.sprite }}, Coke Zero = {{ item.coke_zero }} <br>
+                <b>SODA</b>: Coke = {{ item.coke }}, Diet Coke = {{ item.diet_coke }}, Sprite = {{ item.sprite }}, Coke Zero = {{ item.coke_zero }} <br>
             </div>
             <div class="item-box">
-                <b>Lacroix</b>: Lemoncello = {{ item.lacroix_lemoncello }}, Lime= {{ item.lacroix_lime }}, Pamplemousse= {{ item.lacroix_pamplemousse }}, Pasteque= {{ item.lacroix_pasteque }}, Tangerine= {{ item.tangerine }}, Berry= {{ item.lacroix_berry }}, Lemon= {{ item.lemon }}, Blackberry Cucumber= {{ item.lacroix_blackberry_cucumber }}, Cherry Lime= {{ item.lacroix_cherry_lime }}, Pineapple Strawberry= {{ item.lacroix_pineapple_strawberry }}, Ki-Biscus= {{ item.lacroix_ki_biscus }}
+                <b>LACROIX</b>: Lemoncello = {{ item.lacroix_lemoncello }}, Lime= {{ item.lacroix_lime }}, Pamplemousse= {{ item.lacroix_pamplemousse }}, Pasteque= {{ item.lacroix_pasteque }}, Tangerine= {{ item.tangerine }}, Berry= {{ item.lacroix_berry }}, Lemon= {{ item.lemon }}, Blackberry Cucumber= {{ item.lacroix_blackberry_cucumber }}, Cherry Lime= {{ item.lacroix_cherry_lime }}, Pineapple Strawberry= {{ item.lacroix_pineapple_strawberry }}, Ki-Biscus= {{ item.lacroix_ki_biscus }}
             </div>
             <div class="item-box">
-                <b>Other</b>: Horizon Milk = {{ item.horizon_milk }}
+                <b>OTHER</b>: Horizon Milk = {{ item.horizon_milk }}
             </div>      
         </div>
         <div class="delete-box">
@@ -97,6 +99,6 @@
     {% endfor %}
 </ul>
 
-    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+    <!-- <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br> -->
 </body>
 </html>

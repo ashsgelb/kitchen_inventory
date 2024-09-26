@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Snack Inventory</h1>
+
+    <a href="{{ url_for('directory') }}">Return to Home Page</a><br><br>
+
     <form action="/add-snack-item" method="POST">
 
         <label for="baked_chips_quantity">Bake Chips Quantity:</label>
@@ -53,14 +56,57 @@
     <h2>Inventory List</h2>
     <ul>
         {% for item in items %}
-            <li class="inventory-item">
-                <span>Date: {{ item['date'] }} | Snack: {{ item['snack'] }}</span>
-                <form action="{{ url_for('delete_snack_item', item_id=item['id']) }}" method="POST" class="delete-form">
+        <li class="inventory-item">
+            <div class="item-box">
+                <div class="date-box">
+                    <b>Date</b>: {{ item.date }}
+                </div>
+                <div class="item-box">
+                    <b>Baked Chips</b>: {{ item.baked_chips }}
+                </div>
+                <div class="item-box">
+                    <b>Kirkland Snacking Nuts</b>: {{ item.kirkland_snacking_nuts }}
+                </div>
+                <div class="item-box">
+                    <b>Kirkland Trail Mix</b>: {{ item.kirkland_trail_mix }}
+                </div>
+                <div class="item-box">
+                    <b>Popcorn</b>: {{ item.popcorn }}
+                </div>
+                <div class="item-box">
+                    <b>Kirkland Nut Bars</b>: {{ item.kirkland_nut_bars }}
+                </div>
+                <div class="item-box">
+                    <b>Fruit Strips Variety Pack</b>: {{ item.fruit_strips_variety_pack }}
+                </div>
+                <div class="item-box">
+                    <b>Cheez-It Snap'd</b>: {{ item.cheez_it_snapped }}
+                </div>
+                <div class="item-box">
+                    <b>Skinny Pop</b>: {{ item.skinny_pop }}
+                </div>
+                <div class="item-box">
+                    <b>Nature Valley Protein Bars</b>: {{ item.nature_valley_protein_bars }}
+                </div>
+                <div class="item-box">
+                    <b>Sun Chips</b>: {{ item.sun_chips }}
+                </div>
+                <div class="item-box">
+                    <b>Cheez-It</b>: {{ item.cheez_it }}
+                </div>
+                <div class="item-box">
+                    <b>Pretzels</b>: {{ item.pretzels }}
+                </div>
+            </div>
+            <div class="delete-box">
+                <form action="{{ url_for('delete_snack_item', item_id=item.id) }}" method="POST" class="delete-form">
                     <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this item?');">
                 </form>
-            </li>
+            </div>
+        </li>
         {% endfor %}
     </ul>
-    <a href="{{ url_for('directory') }}">Back to Directory</a>
+    
+    <!-- <a href="{{ url_for('directory') }}">Back to Directory</a> -->
 </body>
 </html>
